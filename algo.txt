@@ -1,0 +1,81 @@
+// ===== COURS D'ALGORITHMIE =====
+// 🚀 Bienvenue dans le monde fascinant de l'algorithmie! 🚀
+
+// ----- TYPES DE VARIABLES -----
+// 📊 Les différents types de données que nous utilisons
+
+// Entier : (nombres sans décimales)
+var entier monage = 21;  // Représente un âge en années complètes
+
+// Réel: (nombres avec décimales)
+var réel monageetdemi = 21.5;  // Permet de représenter des valeurs précises
+
+// Chaine de caractères: (texte)
+var chainedecaracteres "J'adore les cookies";  // Stocke du texte entre guillemets
+
+// Booléen: (vrai/faux)
+var bool estMajeur = True;  // Utilisé pour les conditions logiques
+
+// ----- EXERCICES PRATIQUES -----
+// 💻 Mettons en pratique ces concepts!
+
+// Exercice 1: Saisie et vérification d'un prénom
+// ✨ Interaction avec l'utilisateur
+var prenom;
+
+fonction (algosaisie) {
+    prenom = UserName;  // Récupération de la saisie utilisateur
+} 
+// Vérification de la validité du prénom
+Si {
+    (UserName = True)  // Si un prénom a été saisi
+    Afficher("✅ Votre prénom est " + UserName)
+} sinon {
+    afficher ("⚠️ Veuillez retaper votre prénom")  // Message d'erreur
+}
+
+// ----- CORRECTIONS & EXEMPLES -----
+// 🔍 Analysons des solutions correctes
+
+// Algorithme pour afficher une variable
+// 📝 Correction ------------------
+
+    Algorithme afficher_variable
+        Var entier entierASaisir;  // Déclaration de variable
+
+    Debut {
+        Saisir(entierASaisir);  // Lecture de la valeur
+        Afficher(entierASaisir);  // Affichage du résultat
+    } Fin
+
+// Exemple: Calcul du produit et vérification du signe
+// 🧮 Autre exemple ------------------------
+
+var a;  // Premier nombre
+var b;  // Second nombre
+a = parseFloat(prompt("🔢 Veuillez Saisir une valeur a"));
+b = parseFloat(prompt("🔢 Veuillez Saisir une valeur b"));
+var result = parseFloat(a*b);  // Calcul du produit
+if (parseFloat(a*b) > 0) {
+    alert("✅ Le resultat est positif " + result);
+} else if (parseFloat(a * b) < 0) {
+    alert("📉 Le resultat est negatif " + result);
+} else {
+    alert("0️⃣ Le resultat est nul");
+}
+
+// Exemple: Vérification si un nombre est pair ou impair
+// 🔄 ------------------------
+
+// Verifier si un nombre est pair ou impair
+
+var a;  // Nombre à vérifier
+
+a = parseFloat(prompt("🔢 Veuillez Saisir une valeur a"));
+if(a%2 == 0) {  // Utilisation du modulo pour vérifier la parité
+    alert("👍 Le nombre est pair");
+} else {
+    alert("👌 Le nombre est impair");
+}
+
+// 

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Présentation</title>
+    <link rel="shortcut icon" href="../images/html.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/bases_html.css">
+    <!-- Ajout de Google Fonts pour une meilleure typographie -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- En-tête de la page avec la navigation -->
+    <header>
+        <nav>
+            <h1>Portfolio</h1>
+            <ul>
+                <li><a href="#presentation"><i class="fas fa-user-circle"></i> Présentation</a></li>
+                <li><a href="#passions"><i class="fas fa-heart"></i> A propos</a></li>
+                <li><a href="#competences"><i class="fas fa-code"></i> Compétences</a></li>
+                <li><a href="#projets"><i class="fas fa-project-diagram"></i> Projets</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+        <button class="btn" id="btn-cours-html" title="Cours algorithme et dev web"><a href="../index.html"><i
+                    class="fa-brands fa-html5"></i> Retour aux cours</a></button>
+    </header>
+
+    <!-- Contenu principal de la page -->
+    <main>
+        <!-- Section Présentation -->
+        <section id="presentation" class="fade-in">
+            <h2><i class="fas fa-user-circle"></i> Présentation</h2>
+            <div class="presentation-content">
+                <p><strong>Age:</strong> 21 ans</p>
+                <p><i class="fa-solid fa-location-dot"></i> <strong>Localisation:</strong> Reims</p>
+                <p><i class="fas fa-graduation-cap"></i> <strong>Formation:</strong> Développeur Informatique</p>
+                <p><i class="fas fa-briefcase"></i> <strong>Statut:</strong> Étudiant</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Section Passions -->
+        <section id="passions" class="fade-in">
+            <h2><i class="fas fa-heart"></i> Passions</h2>
+            <div class="passions-container">
+                <div class="passions-list">
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-brain"></i> Innovations technologiques
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-film"></i> Cinéma
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-satellite"></i> Innovations spatiales
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-camera"></i> Car spotteur à temps perdu
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="destinations">
+                    <h3><i class="fas fa-plane"></i> Destinations rêvées</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> Espagne: Madrid, Valence
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> Etats-Unis: Los Angeles
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i> Japon: Tokyo, Shibuya
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Section Compétences -->
+        <section id="competences" class="fade-in">
+            <h2><i class="fas fa-code"></i> Mes Compétences</h2>
+            <div class="competences grid">
+                <a href="../images/html.png" class="skill-card">
+                    <img src="../images/html.png" alt="HTML">
+                </a>
+                <a href="../images/css.png" class="skill-card">
+                    <img src="../images/css.png" alt="CSS">
+                </a>
+                <a href="../images/js.png" class="skill-card">
+                    <img src="../images/js.png" alt="Javascript">
+                </a>
+                <a href="../images/python.png" class="skill-card">
+                    <img src="../images/python.png" alt="Python">
+                </a>
+                <a href="../images/php.png" class="skill-card">
+                    <img src="../images/php.png" alt="PHP">
+                </a>
+                <a href="../images/sql.png" class="skill-card">
+                    <img src="../images/mysql.png" alt="SQL">
+                </a>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Section Projets -->
+        <section id="projets" class="fade-in">
+            <h2><i class="fas fa-project-diagram"></i> Mes projets</h2>
+            <div class="projects grid">
+                <div class="projet-item">
+                    <img src="../images/orionlogo.png" alt="Orion AI">
+                    <a href="https://oriondigital.tech">
+                        <i class="fa-solid fa-microchip"></i> Orion AI
+                    </a>
+                </div>
+
+                <div class="projet-item">
+                    <img src="../images/devweb.png" alt="Mon portfolio">
+                    <a href="https://myportfolio-by-swennsco.online">
+                        <i class="fa-solid fa-briefcase"></i> Portfolio
+                    </a>
+                </div>
+
+                <div class="projet-item">
+                    <img src="../images/generativepassw.ico" alt="Générateur de mot de passe">
+                    <a href="https://github.com/Gw3nhael51/Genpass-V2">
+                        <i class="fa-solid fa-key"></i> GenPass V2
+                    </a>
+                </div>
+
+                <div class="projet-item">
+                    <img src="../images/mainlogo.png" alt="Proxclean">
+                    <a href="https://proxclean.fr">
+                        <i class="fa-solid fa-soap"></i> Proxclean
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Section Contact -->
+        <section id="contact" class="fade-in">
+            <h2><i class="fas fa-envelope"></i> Contact</h2>
+            <div class="contact-container">
+                <p><i class="fas fa-envelope"></i> Email: <a
+                        href="mailto:gwenhael.lethiec@gmail.com">gwenhael.lethiec@viacesi.fr</a></p>
+                <p><i class="fas fa-phone"></i> Téléphone: <a href="tel:+33651452123">06 51 45 21 23</a></p>
+                <div class="contact-form">
+                    <h3>Envoyez-moi un message</h3>
+                    <form>
+                        <input type="text" placeholder="Votre nom" required>
+                        <input type="email" placeholder="Votre email" required>
+                        <textarea placeholder="Votre message" rows="4" required></textarea>
+                        <button type="submit" class="btn">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2025 Gwenhael Le Thiec - Tous droits réservés</p>
+        <section class="reseaux">
+            <a href="https://github.com/Gw3nhael51" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/gwenhael-le-thiec/" title="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+        </section>
+        <p class="credits">Conçu avec <i class="fas fa-heart" style="color: var(--accent-color);"></i> par Gwenhael Le
+            Thiec</p>
+    </footer>
+
+    <!-- Script pour les animations -->
+    <script>
+        // Animation de défilement fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation d'apparition au défilement
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        function checkFade() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Style initial pour les éléments à animer
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        // Vérifier au chargement et au défilement
+        window.addEventListener('load', checkFade);
+        window.addEventListener('scroll', checkFade);
+    </script>
+</body>
+
+</html>

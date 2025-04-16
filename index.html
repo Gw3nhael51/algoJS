@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="./images/js.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="dark-mode">
+    <script>
+        function toggleDarkMode() {
+            const darkModeToggle = document.getElementById("darkModeToggle");
+            const body = document.body;
+
+            if (body.classList.contains("dark-mode")) {
+                // Passage au mode clair
+                body.classList.remove("dark-mode");
+                darkModeToggle.textContent = "🌙"; // Lune pour revenir au mode sombre
+                localStorage.setItem("darkMode", "light"); // Sauvegarde de la préférence
+            } else {
+                // Passage au mode sombre
+                body.classList.add("dark-mode");
+                darkModeToggle.textContent = "☀️"; // Soleil pour revenir au mode clair
+                localStorage.setItem("darkMode", "dark"); // Sauvegarde de la préférence
+            }
+        }
+
+        // Initialiser l'icône et le mode au chargement de la page
+        window.onload = function () {
+            const darkModeToggle = document.getElementById("darkModeToggle");
+            const body = document.body;
+            const savedMode = localStorage.getItem("darkMode");
+
+            // Appliquer le mode sauvegardé si disponible
+            if (savedMode === "light") {
+                body.classList.remove("dark-mode");
+                darkModeToggle.textContent = "🌙";
+            } else {
+                body.classList.add("dark-mode");
+                darkModeToggle.textContent = "☀️";
+            }
+
+            // Ajouter les événements pour les cartes
+            const cards = document.querySelectorAll('.card-header');
+            cards.forEach(card => {
+                card.addEventListener('click', function () {
+                    this.parentElement.classList.toggle('active');
+                });
+            });
+        }
+    </script>
+
+    <!-- Bouton dark mode placé en haut à droite -->
+    <button class="btn-darkmode" id="darkModeToggle" onclick="toggleDarkMode()"></button>
+    <button class="btn-cours-html btn-darkmode" id="btn-cours-html" onclick="window.location.href='./cours_html/bases.html'"><i class="fa-brands fa-html5"></i></button>
+
+    <br>
+    <h1>Cours Algo</h1>
+
+    <div class="date-time">
+        <!-- Affichage de la date et l'heure -->
+        <script>
+            document.write("Date et heure : " + new Date()); 
+        </script>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Calcul du produit et vérification du signe <i class="fa-solid fa-calculator"></i></h3>
+        </div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function produit() {
+                            // Déclaration des variables
+                            var a;
+                            var b;
+
+                            // Saisie de la première valeur
+                            a = parseFloat(prompt("Veuillez Saisir une valeur a"));
+
+                            // Saisie de la deuxième valeur
+                            b = parseFloat(prompt("Veuillez Saisir une valeur b"));
+
+                            // Calcul du produit
+                            var result = a * b;
+
+                            // Vérification du signe du résultat
+                            if (result > 0) {
+                                alert("Le resultat est positif " + result);
+                            } else if (result < 0) {
+                                alert("Le resultat est negatif " + result);
+                            } else {
+                                alert("Le resultat est nul");
+                            }
+                        }
+                    </script>
+                    <code>
+    function produit() {
+        // Déclaration des variables
+    var a;
+    var b;
+    
+    // Saisie de la première valeur
+    a = parseFloat(prompt("Veuillez Saisir une valeur a"));
+    
+    // Saisie de la deuxième valeur
+    b = parseFloat(prompt("Veuillez Saisir une valeur b"));
+    
+    // Calcul du produit
+    var result = a * b;
+    
+    // Vérification du signe du résultat
+    if (result > 0) {
+        alert("Le resultat est positif " + result);    
+    } else if (result < 0) {
+        alert("Le resultat est negatif " + result);
+    } else {
+        alert("Le resultat est nul");
+        }
+    }
+                    </code>
+                </pre>
+                <button class="btn" onclick="produit()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Vérification nombre pair ou impair (version 1) <i class="fa-solid fa-calculator"></i></h3>
+        </div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function pair() {
+                            // Déclaration de la variable
+                            var a;
+
+                            // Saisie de la valeur
+                            a = parseFloat(prompt("Veuillez Saisir une valeur a"));
+
+                            // Vérification si le nombre est pair ou impair
+                            if (a % 2 == 0) {
+                                alert("Le nombre est pair");
+                            } else {
+                                alert("Le nombre est impair");
+                            }
+                        }
+                    </script>
+                    <code>
+    function pair() {
+        // Déclaration de la variable
+        var a;
+        
+        // Saisie de la valeur
+        a = parseFloat(prompt("Veuillez Saisir une valeur a"));
+        
+        // Vérification si le nombre est pair ou impair
+        if(a%2 == 0) {
+            alert("Le nombre est pair");
+        } else {
+            alert("Le nombre est impair");
+        }
+    }
+                    </code>
+                </pre>
+                <button class="btn" onclick="pair()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Vérification nombre pair ou impair (version 2) <i class="fa-solid fa-calculator"></i></h3>
+        </div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function pair2() {
+                            // Saisie directe de la valeur
+                            let n = parseInt(prompt("Veuillez Saisir une valeur n"));
+
+                            // Vérification si le nombre est pair ou impair
+                            if (n % 2 == 0) {
+                                alert("Le nombre est pair");
+                            } else {
+                                alert("Le nombre est impair");
+                            }
+                        }
+                    </script>
+                    <code>
+    // Saisie directe de la valeur
+    let n = parseInt(prompt("Veuillez Saisir une valeur n"));
+    
+    // Vérification si le nombre est pair ou impair
+    if(n%2 == 0) {
+        alert("Le nombre est pair");
+    } else {
+        alert("Le nombre est impair");
+    }
+                    </code>
+                </pre>
+                <button class="btn" onclick="pair2()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Calcul du produit avec variables x et y <i class="fa-solid fa-calculator"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function produit() {
+                            // Déclaration des variables
+                            let x;
+                            let y;
+                            let result;
+
+                            // Saisie des valeurs
+                            x = parseFloat(prompt("Veuillez Saisir une valeur x"));
+                            y = parseFloat(prompt("Veuillez Saisir une valeur y"));
+
+                            // Calcul du produit
+                            result = x * y;
+
+                            // Vérification du signe du résultat
+                            if (result > 0) {
+                                alert("Le resultat est positif " + result);
+                            } else if (result < 0) {
+                                alert("Le resultat est negatif " + result);
+                            } else {
+                                alert("Le resultat est nul");
+                            }
+                        }
+                    </script>
+                    <code>
+    // Déclaration des variables
+    let x;
+    let y;
+    let result;
+    
+    // Saisie des valeurs
+    x = parseFloat(prompt("Veuillez Saisir une valeur x"));
+    y = parseFloat(prompt("Veuillez Saisir une valeur y"));
+    
+    // Calcul du produit
+    result = x * y;
+    
+    // Vérification du signe du résultat
+    if (result > 0) {
+        alert("Le resultat est positif " + result);
+    } else if (result < 0) {
+        alert("Le resultat est negatif " + result);
+    } else {
+        alert("Le resultat est nul");
+    }
+                    </code>
+                </pre>
+                <button class="btn" onclick="produit()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Utilisation d'une fonction pour calculer le produit <i class="fa-solid fa-calculator"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function produit(a, b) {
+                            // Fonction qui calcule le produit de deux nombres
+                            function produit(a, b) {
+                                return a * b;
+                            }
+
+                            // Saisie des valeurs
+                            let a = parseInt(prompt("Veuillez Saisir une valeur a"));
+                            let b = parseInt(prompt("Veuillez Saisir une valeur b"));
+
+                            // Calcul du produit en utilisant la fonction
+                            let result_produit = produit(a, b);
+
+                            // Vérification du signe du résultat
+                            if (result_produit < 0) {
+                                alert("le produit est négatif " + result_produit);
+                            } else if (result_produit > 0) {
+                                alert("le produit est positif " + result_produit);
+                            } else {
+                                alert("le produit est nul");
+                            }
+                        }
+                    </script>
+                    <code>
+    function produit(a, b) {
+        // Fonction qui calcule le produit de deux nombres
+    
+    
+        // Saisie des valeurs
+        let a = parseInt(prompt("Veuillez Saisir une valeur a"));
+        let b = parseInt(prompt("Veuillez Saisir une valeur b"));
+        
+        // Calcul du produit en utilisant la fonction
+        let result_produit = produit(a, b);
+        
+        // Vérification du signe du résultat
+        if(result_produit < 0) {
+            alert("le produit est négatif " + result_produit);
+        } else if(result_produit > 0) {
+            alert("le produit est positif " + result_produit);
+        } else {
+            alert("le produit est nul");
+        }
+    }
+                    </code>
+                </pre>
+                <button class="btn" onclick="produit()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Conditions if-else et switch pour les feux de circulation <i class="fa-solid fa-traffic-light"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function feu() {
+                            var feu;
+
+                            if (feu == "vert") {
+                                alert("J'avance");
+                            } else if (feu == "orange") {
+                                alert("Je m'arrête");
+                            } else if (feu == "rouge") {
+                                alert("Je m'arrête");
+                            } else {
+                                alert("Couleur invalide");
+                            }
+
+                            // utilisation de case 
+
+                            switch (feu) {
+                                case "vert":
+                                    alert("J'avance");
+                                    break;
+                                case "orange":
+                                    alert("Je m'arrête");
+                                    break;
+                                case "rouge":
+                                    alert("Je m'arrête");
+                                    break;
+                                default:
+                                    alert("Couleur invalide");
+                                    break;
+                            }
+                        }
+                    </script>
+                    <code>
+    var feu;
+    
+    if (feu == "vert") {
+        alert("J'avance");
+    } else if (feu == "orange") {
+        alert("Je m'arrête");
+    } else if (feu == "rouge") {
+        alert("Je m'arrête");
+    } else {
+        alert("Couleur invalide");
+    }
+    
+    // utilisation de case 
+    
+    switch (feu) {
+        case "vert":
+            alert("J'avance");
+            break;
+        case "orange":
+            alert("Je m'arrête");
+            break;
+        case "rouge":
+            alert("Je m'arrête");
+            break;
+        default:
+            alert("Couleur invalide");
+            break;
+    }
+                    </code>
+                </pre>
+                <button class="btn" onclick="feu()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Utilisation de switch pour afficher les mois <i class="fa-solid fa-calendar-days"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function mois() {
+                            var mois;
+
+                            mois = parseInt(prompt("Veuillez Saisir un mois par son numero"));
+
+                            switch (mois) {
+                                case 1:
+                                    alert("Janvier");
+                                    break;
+                                case 2:
+                                    alert("Février");
+                                    break;
+                                case 3:
+                                    alert("Mars");
+                                    break;
+                                case 4:
+                                    alert("Avril");
+                                    break;
+                                case 5:
+                                    alert("Mai");
+                                    break;
+                                case 6:
+                                    alert("Juin");
+                                    break;
+                                case 7:
+                                    alert("Juillet");
+                                    break;
+                                case 8:
+                                    alert("Août");
+                                    break;
+                                case 9:
+                                    alert("Septembre");
+                                    break;
+                                case 10:
+                                    alert("Octobre");
+                                    break;
+                                case 11:
+                                    alert("Novembre");
+                                    break;
+                                case 12:
+                                    alert("Décembre");
+                                    break;
+                                default:
+                                    while (mois < 1 || mois > 12) {
+                                        alert("Mois invalide");
+                                        mois = parseInt(prompt("Veuillez Saisir un mois par son numero"));
+                                    }
+                            }
+                        }
+                    </script>
+                    <code>
+                
+    var mois;    
+    mois = parseInt(prompt("Veuillez Saisir un mois par son numero"));
+    
+    switch(mois) {
+        case 1:
+            alert("Janvier");
+            break;
+        case 2:
+            alert("Février");
+            break;
+        case 3:
+            alert("Mars");
+            break;
+        case 4:
+            alert("Avril");
+            break;
+        case 5:
+            alert("Mai");
+            break;
+        case 6:
+            alert("Juin");
+            break;
+        case 7:
+            alert("Juillet");
+            break;
+        case 8:
+            alert("Août");
+            break;
+        case 9:
+            alert("Septembre");
+            break;
+        case 10:
+            alert("Octobre");
+            break;
+        case 11:
+            alert("Novembre");
+            break;
+        case 12:
+            alert("Décembre");
+            break;
+        default:
+            while(mois < 1 || mois > 12) {
+                alert("Mois invalide");
+                mois = parseInt(prompt("Veuillez Saisir un mois par son numero"));
+            }
+        }
+                    </code>
+                </pre>
+                <button class="btn" onclick="mois()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Utilisation d'un tableau pour afficher les mois <i class="fa-solid fa-calendar-days"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function mois_tableau() {
+                            // avec un tableau
+                            let mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+                            let insertMois = parseInt(prompt("Veuillez Saisir un mois par son numero"));
+
+                            let result = mois[insertMois - 1];
+
+                            if (insertMois <= 12) {
+                                alert("Votre mois est : " + result);
+                            } else {
+                                while (insertMois > 12 || insertMois < 1) {
+                                    alert("Mois invalide");
+                                    insertMois = parseInt(prompt("Veuillez saisir un mois par son numero"));
+                                }
+                            }
+                        }
+                    </script>
+                    <code>
+    // avec un tableau
+    let mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+    let insertMois = parseInt(prompt("Veuillez Saisir un mois par son numero"));
+    
+    let result = mois[insertMois - 1];
+    
+    if (insertMois <= 12) {
+        alert("Votre mois est : " + result);
+    } else {
+        while(insertMois > 12 || insertMois < 1) {
+            alert("Mois invalide");
+            insertMois = parseInt(prompt("Veuillez saisir un mois par son numero"));
+        }
+    }
+                    </code>
+                </pre>
+                <button class="btn" onclick="mois_tableau()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Boucle for avec compteur croissant <i class="fa-solid fa-plus"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function egg() {
+                            // boucle for
+                            let egg;
+
+                            for (egg = 1; egg <= 10; egg++) {
+                                alert("🥚 : " + egg);
+                            }
+                        }
+                    </script>
+                    <code>
+    // boucle for
+    let egg;    
+    for(egg = 1; egg <= 10; egg++) {
+        alert("🥚 : " + egg);
+    }
+                    </code>
+                </pre>
+                <button class="btn" onclick="egg()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Boucle for avec compteur décroissant <i class="fa-solid fa-minus"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function compteur() {
+                            let compteur;
+
+                            for (compteur = 10; compteur >= 1; compteur--) {
+                                alert("Bonsoir x" + compteur);
+                            }
+                        }
+                    </script>
+                    <code>
+    let compteur;
+    
+    for(compteur = 10; compteur >= 1; compteur--) {
+        alert("Bonsoir x" + compteur);
+    }
+                    </code>
+                </pre>
+                <button class="btn" onclick="compteur()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Boucle for avec affichage "Bonsoir" <i class="fa-solid fa-user"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function bonsoir() {
+                            let i;
+
+                            for (i = 1; i <= 10; i++) {
+                                alert("Bonsoir x" + i);
+                            }
+                        }
+                    </script>
+                    <code>
+    let i;
+
+    for(i = 1; i <= 10; i++) {
+        alert("Bonsoir x" + i);
+    }
+                    </code>
+                </pre>
+                <button class="btn" onclick="bonsoir()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Boucle while avec compteur <i class="fa-solid fa-user"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function compteur() {
+                            let i = 0;
+
+                            while (i <= 10) {
+                                alert("Bonsoir x" + i);
+                                i++;
+                            }
+                        }
+                    </script>
+                    <code>
+    let i = 0;
+
+    while(i <= 10) {
+        alert("Bonsoir x" + i);
+        i++;
+    }
+                    </code>
+                </pre>
+                <button class="btn" onclick="compteur()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Calcul de somme avec boucle while <i class="fa-solid fa-calculator"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function somme_while() {
+                            let somme = 1;
+                            let i = 1;
+
+                            while (i <= 9) {
+                                i += 1;
+                                somme += i;
+                            }
+                            alert("La somme est : " + somme);
+                        }
+                    </script>
+                    <code>
+    let somme = 1;
+    let i = 1;
+
+    while(i <= 9) {
+        i+=1;
+        somme += i;
+    }
+    alert("La somme est : " + somme);
+                    </code>
+                </pre>
+                <button class="btn" onclick="somme_while()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Calcul de somme avec boucle for (version 1) <i class="fa-solid fa-calculator"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function somme_for() {
+                            // boucle for
+                            let somme = 0;
+
+                            for (let i = 1; i <= 9; i++) {
+                                somme = i + 1;
+                            }
+                            alert("La somme est : " + somme);
+                        }
+                    </script>
+                    <code>
+    // boucle for
+    let somme = 0;
+    
+    for(let i = 1; i <= 9; i++) {
+        somme = i+1;
+    }
+    alert("La somme est : " + somme);
+                    </code>
+                </pre>
+                <button class="btn" onclick="somme_for()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Calcul de somme avec boucle for et saisie utilisateur <i class="fa-solid fa-calculator"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function somme_for_user() {
+                            // boucle for
+                            let somme = 0;
+                            let saisie = parseInt(prompt("Veuillez Saisir une valeur"));
+
+                            for (let i = 1; i <= saisie; i++) {
+                                somme += i;
+                            }
+                            alert("La somme est : " + somme);
+                        }
+                    </script>
+                    <code>
+    // boucle for
+    let somme = 0;
+    let saisie = parseInt(prompt("Veuillez Saisir une valeur"));
+    
+    for(let i = 1; i <= saisie; i++) {
+        somme += i;
+    }
+    alert("La somme est : " + somme);
+                    </code>
+                </pre>
+                <button class="btn" onclick="somme_for_user()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Calculer la somme des nombres impairs entre deux nombres donnés <i class="fa-solid fa-calculator"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function somme_impair() {
+                            // Déclaration des variables pour stocker les nombres saisis par l'utilisateur
+                            let nombreX = parseInt(prompt("Veuillez Saisir une valeur x"));
+                            let nombreY = parseInt(prompt("Veuillez Saisir une valeur y"));
+
+                            // Initialisation de la variable somme
+                            let somme = 0;
+
+                            // Vérification et échange des valeurs si x est plus grand que y
+                            if (nombreX > nombreY) {
+                                let change = nombreX;
+                                nombreX = nombreY;
+                                nombreY = change;
+                            }
+
+                            // Boucle pour parcourir tous les nombres entre x et y
+                            for (let i = nombreX; i <= nombreY; i++) {
+                                // Vérification si le nombre est impair
+                                if (i % 2 !== 0) {
+                                    somme += i;
+                                }
+                            }
+
+                            // Affichage du résultat
+                            alert("La somme des nombres impairs est : " + somme);
+                        }
+                    </script>
+                    <code>
+    let nombreX = parseInt(prompt("Veuillez Saisir une valeur x"));
+    let nombreY = parseInt(prompt("Veuillez Saisir une valeur y"));
+
+    let somme = 0;
+
+    if (nombreX > nombreY) {
+        let change = nombreX;
+        nombreX = nombreY;
+        nombreY = change;
+    }
+
+    for (let i = nombreX; i <= nombreY; i++) {
+        if (i % 2 !== 0) { 
+            somme += i; 
+        }
+    }
+
+    alert("La somme des nombres impairs est : " + somme);
+                    </code>
+                </pre>
+                <button class="btn" onclick="somme_impair()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Vérifier si une chaîne de caractères donnée est un palindrome <i class="fa-solid fa-user"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function palindrome() {
+                            let phrase = prompt("Un palindrome c'est une phrase qui se lit de la même façon dans les deux sens" + "\n" + "Veuillez Saisir une chaîne de caractères");
+
+                            // Nettoyer la chaîne : enlever les espaces et mettre en minuscules
+                            let phraseNettoyee = phrase.replace(/ /g, "").toLowerCase();
+
+                            // Inverser la chaîne nettoyée
+                            let phraseInversee = phraseNettoyee.split("").reverse().join("");
+
+                            // Comparer la chaîne nettoyée avec sa version inversée
+                            if (phraseNettoyee === phraseInversee) {
+                                alert("La phrase est un palindrome : " + phrase);
+                            } else {
+                                alert("La phrase n'est pas un palindrome : " + phrase);
+                            }
+                        }
+                    </script>
+                    <code>
+    let phrase = prompt("Un palindrome c'est une phrase qui se lit de la même façon dans les deux sens" + "\n" + "Veuillez Saisir une chaîne de caractères");
+
+    // Nettoyer la chaîne : enlever les espaces et mettre en minuscules
+    let phraseNettoyee = phrase.replace(/ /g, "").toLowerCase();
+
+    // Inverser la chaîne nettoyée
+    let phraseInversee = phraseNettoyee.split("").reverse().join("");
+
+    // Comparer la chaîne nettoyée avec sa version inversée
+    if (phraseNettoyee === phraseInversee) {
+        alert("La phrase est un palindrome : " + phrase);
+    } else {
+        alert("La phrase n'est pas un palindrome : " + phrase);
+    }
+                    </code>
+                </pre>
+                <button class="btn" onclick="palindrome()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h3>Bouton pour activer le dark mode <i class="fa-solid fa-moon"></i></h3></div>
+        <div class="card-body">
+            <div class="code-container">
+                <pre>
+                    <script>
+                        function toggleDarkMode() {
+                            document.body.classList.toggle("dark-mode");
+                        }
+                    </script>
+                    <code>
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+                    </code>
+                </pre>
+                <button class="btn" onclick="toggleDarkMode()"><span>Activer</span></button>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3>Demander une valeur et l'afficher <i class="fa-solid fa-user"></i></h3>
+            <div class="card-body">
+                <div class="code-container">
+                    <pre>
+                        <script>
+                            function afficherValeur() {
+                                
+                            }
+                        </script>
+                        <code>
+
+
+                        </code>
+                    </pre>
+                    <button class="btn" onclick="afficherValeur()"><span>Activer</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

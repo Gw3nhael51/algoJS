@@ -1,0 +1,369 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5; /* Fond clair */
+    color: #333; /* Texte foncé pour mode clair */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: appear 3s ease;
+}
+
+h1 {
+    color: #e63946;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: underline;
+    margin-top: -20px;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+h3 {
+    color: #457b9d;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.date-time {
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #555; /* Couleur de texte pour la date en mode clair */
+}
+
+.code-container {
+    background-color: #fff; /* Fond blanc pour les conteneurs en mode clair */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.code-container:hover {
+    transform: translateY(-5px);
+}
+
+pre {
+    margin: 0;
+    padding: 0;
+}
+
+code {
+    color: #1d3557; /* Couleur de texte pour le code en mode clair */
+    font-size: 16px;
+    display: block;
+    background-color: #f1faee; /* Fond légèrement coloré pour le code en mode clair */
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #457b9d;
+    overflow-x: auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #a8dadc;
+    margin: 30px 0;
+}
+
+.comment {
+    color: #6c757d; /* Couleur des commentaires en mode clair */
+}
+
+.btn {
+    /* Vert élégant */
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 50%;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Animation de pulsation */
+    animation: pulse 2s infinite;
+    /* Ombre portée pour effet de profondeur */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animation de pulsation subtile */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 8px 16px rgba(76, 175, 80, 0.4);
+    }
+
+    100% {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Effet d'ondulation au clic */
+.btn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.8s;
+}
+
+.btn:active::after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    border: 2px solid #000000;
+    /* Animation de brillance au survol */
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Animation de brillance */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+    }
+}
+
+/* Animation de clic */
+@keyframes click-animation {
+    0% {
+        transform: scale(0.95);
+        background-color: #3e8e41;
+    }
+
+    50% {
+        transform: scale(0.9);
+        background-color: #2d682f;
+    }
+
+    100% {
+        transform: scale(0.95);
+        background-color: #3e8e41;
+    }
+}
+
+/* Animation d'ondulation pour l'état actif */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn:active {
+    background-color: #3e8e41;
+    transform: scale(0.95);
+    /* Animation de clic */
+    animation: click-animation 0.3s ease;
+    /* Effet d'ondulation amélioré */
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:active::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple 0.6s linear;
+}
+
+/* ----------- Dark mode */
+
+/* Bouton dark mode */
+.btn-darkmode {
+    background-color: #4CAF50;
+    /* Position en haut à droite */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    /* Style du bouton */
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-darkmode:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles spécifiques pour le mode clair */
+body:not(.dark-mode) .btn-darkmode {
+    background-color: #74c0fc;
+    color: #222;
+}
+
+body:not(.dark-mode) .btn-darkmode:hover {
+    background-color: #4dabf7;
+    border: 2px solid #1971c2;
+}
+
+/* Dark mode */
+.dark-mode {
+    background-color: #222;
+    color: #f0f0f0;
+}
+
+.dark-mode h1 {
+    color: #ff6b6b;
+}
+
+.dark-mode h3 {
+    color: #74c0fc;
+}
+
+.dark-mode .date-time {
+    color: #adb5bd;
+}
+
+.dark-mode .code-container {
+    background-color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .btn {
+    background-color: #2d8a30;
+    color: #f0f0f0;
+}
+
+.dark-mode .btn:hover {
+    background-color: #3a9d3d;
+    border: 2px solid #f0f0f0;
+}
+
+.dark-mode code {
+    background-color: #444;
+    color: #f8f9fa;
+    border-left: 4px solid #74c0fc;
+}
+
+.dark-mode .comment {
+    color: #adb5bd;
+}
+
+/* Cartes de déroulement */
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    padding: 15px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.card-body {
+    display: none;
+    padding: 15px;
+}
+
+.card.active .card-body {
+    display: block;
+}
+
+.dark-mode .card-header {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .card {
+    border-color: #444;
+    background-color: #222;
+}
+
+/* Bouton vers cours html */
+
+#btn-cours-html {
+    margin-top: 70px !important;
+    animation: pulse 2s infinite;
+    text-decoration: none !important;
+    color: #000000;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#btn-cours-html:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    border: 2px solid #000000;
+}
+
+#btn-cours-html a {
+    text-decoration: none !important;
+    color: #000000;
+}

@@ -1,0 +1,305 @@
+/* Variables globales */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --accent-color: #e74c3c;
+    --transition: all 0.3s ease;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+    --btn-color: #9b59b6; /* Nouvelle couleur pour les boutons */
+    --btn-hover-color: #8e44ad; /* Nouvelle couleur au survol des boutons */
+}
+
+/* Reset et styles de base */
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+/* Typographie */
+h1, h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    text-align: left;
+}
+
+i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Layout et structure */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: var(--border-radius);
+    background-color: white;
+    box-shadow: var(--box-shadow);
+}
+
+/* Header et navigation */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    color: white;
+    padding: 1.2rem;
+    box-shadow: var(--box-shadow);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+nav h1 {
+    font-family: var(--font-heading);
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Boutons */
+.btn {
+    background-color: var(--primary-color); /* Utilisation de la couleur primaire définie */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: #2980b9; /* Couleur de survol plus foncée */
+    transform: translateY(-2px);
+}
+
+#btn-cours-html {
+    position: absolute;
+    top: 120px;
+    left: 88%;
+    z-index: 100;
+}
+
+/* Correction du sélecteur pour cibler directement le bouton */
+#btn-cours-html {
+    position: relative;
+    background-color: #3498db; /* Couleur bleue */
+    padding: 8px 15px;
+    width: auto; /* Taille adaptée au contenu */
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Effet d'ombre subtil */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+#btn-cours-html:hover {
+    background-color: #231e1e; /* Couleur foncée au survol */
+    color: #ffffff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+}
+
+/* Style pour le lien à l'intérieur du bouton */
+#btn-cours-html a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+/* Images */
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px;
+    margin: 50px;
+    transition: 0.5s;
+}
+
+img:hover {
+    transform: scale(1.1);
+    box-shadow: none;
+}
+
+.competences img {
+    width: 100px;
+    height: 100px;
+    box-shadow: 5px 5px 5px 5px;
+    align-items: center;
+}
+
+.competences img:hover {
+    transform: scale(1.1);
+    box-shadow: none;
+}
+
+/* Projets */
+.projects {
+    margin-left: 10px;
+}
+
+.projects i {
+    font-size: 50px;
+}
+
+.projet-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.projet-item:hover {
+    transform: translateY(-5px);
+}
+
+.projet-item a {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.projet-item:hover a {
+    background-color: var(--btn-color); /* Utilisation de la nouvelle couleur pour la cohérence */
+}
+
+.projet-item:hover img {
+    animation: translate 1s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes translate {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.reseaux {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.reseaux a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.reseaux a:hover {
+    color: var(--btn-color); /* Utilisation de la nouvelle couleur pour la cohérence */
+    transform: scale(1.2);
+}
+
+footer .reseaux .fa-github, 
+footer .reseaux .fa-linkedin {
+   font-size: 55px !important;
+}   
+
+footer .fa-linkedin {
+    margin-left: 15px;
+}
+
+footer .fa-github {
+    color: black;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    
+    img {
+        margin: 20px;
+    }
+    
+    #btn-cours-html .btn {
+        position: static;
+        width: auto;
+    }
+}
